@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/styles.dart';
 import 'package:my_portfolio/screens/tablet/tablet_layout_page.dart';
+import 'package:my_portfolio/screens/widgets/count_container_widget.dart';
 import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
 import 'package:my_portfolio/screens/widgets/rotaiting_image_widget.dart';
 
@@ -22,6 +24,8 @@ class _MobileLayoutState extends State<MobileLayout> {
         decoration: Styles.gradientDecoration,
         child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const RotaitingImageContainer(),
               const SizedBox(
@@ -42,12 +46,80 @@ class _MobileLayoutState extends State<MobileLayout> {
                       ],
                     ),
                   ),
+
                   // const Expanded(
                   //   flex: 2,
                   //   child: RotaitingImageContainer(),
                   // )
                 ],
-              )
+              ),
+              Container(
+                width: size.width,
+                margin: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                  const SizedBox(
+                      height: 20,
+                    ),
+                    CountContainerWidget(
+                      size: size,
+                      text1: "14",
+                      text2: "years",
+                      text3: "Expirience",
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                     Divider(
+                      color: AppColors.paleSlate,
+                      indent: size.width * 0.05,
+                      endIndent: size.width * 0.05,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CountContainerWidget(
+                        size: size,
+                        text1: "14",
+                        text2: "years",
+                        text3: "Expirience"),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                     Divider(
+                      color: AppColors.paleSlate,
+                      indent: size.width * 0.05,
+                      endIndent: size.width * 0.05,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CountContainerWidget(
+                        size: size,
+                        text1: "14",
+                        text2: "years",
+                        text3: "Expirience"),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                       Divider(
+                      color: AppColors.paleSlate,
+                      indent: size.width * 0.05,
+                      endIndent: size.width * 0.05,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CountContainerWidget(
+                        size: size,
+                        text1: "14",
+                        text2: "years",
+                        text3: "Expirience"),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

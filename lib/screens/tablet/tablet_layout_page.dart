@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/styles.dart';
+import 'package:my_portfolio/screens/widgets/count_container_widget.dart';
 import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
 import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
 import 'package:my_portfolio/screens/widgets/rotaiting_image_widget.dart';
@@ -47,7 +49,74 @@ class _TabletLayoutState extends State<TabletLayout> {
                     )
                   ],
                 ),
-              )
+              ),
+              Container(
+                width: size.width,
+                margin: EdgeInsets.symmetric(horizontal: size.width * 0.05),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CountContainerWidget(
+                      size: size,
+                      text1: "14",
+                      text2: "years",
+                      text3: "Expirience",
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Divider(
+                      color: AppColors.paleSlate,
+                      indent: size.width * 0.05,
+                      endIndent: size.width * 0.05,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CountContainerWidget(
+                        size: size,
+                        text1: "14",
+                        text2: "years",
+                        text3: "Expirience"),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Divider(
+                      color: AppColors.paleSlate,
+                      indent: size.width * 0.05,
+                      endIndent: size.width * 0.05,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CountContainerWidget(
+                        size: size,
+                        text1: "14",
+                        text2: "years",
+                        text3: "Expirience"),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Divider(
+                      color: AppColors.paleSlate,
+                      indent: size.width * 0.05,
+                      endIndent: size.width * 0.05,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    CountContainerWidget(
+                        size: size,
+                        text1: "14",
+                        text2: "years",
+                        text3: "Expirience"),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -78,7 +147,3 @@ class SocialTab extends StatelessWidget {
     );
   }
 }
-
-
-
-

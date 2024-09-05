@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/styles.dart';
+import 'package:my_portfolio/screens/widgets/count_container_widget.dart';
 import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
 import 'package:my_portfolio/screens/widgets/rotaiting_image_widget.dart';
 
@@ -21,6 +22,7 @@ class _DesktopLayoutState extends State<DesktopLayout> {
         decoration: Styles.gradientDecoration,
         child: SingleChildScrollView(
           child: Column(
+            
             children: [
               Container(
                 margin: EdgeInsets.symmetric(vertical: size.height * 0.18),
@@ -45,6 +47,19 @@ class _DesktopLayoutState extends State<DesktopLayout> {
                   ],
                 ),
               )
+             , Container(
+              margin: EdgeInsets.symmetric(horizontal: size.width*0.05),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CountContainerWidget(size: size,text1: "14",text2:"years",text3: "Expirience" ,),
+                  CountContainerWidget(size: size,text1: "14",text2:"years",text3: "Expirience" ),
+                  CountContainerWidget(size: size,text1: "14",text2:"years",text3: "Expirience" ),
+                  CountContainerWidget(size: size,text1: "14",text2:"years",text3: "Expirience" ),
+
+                ],
+              ),
+             )
             ],
           ),
         ),
