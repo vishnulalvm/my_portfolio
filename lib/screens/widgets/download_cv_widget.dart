@@ -13,21 +13,21 @@ class DownloadCvWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.studio),
+        border: Border.all(color: AppColors.paleSlate),
       ),
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             'Download CV',
-            style: TextStyle(color: AppColors.studio),
+            style: TextStyle(color: AppColors.paleSlate),
           ),
           SizedBox.square(
             dimension: 12,
           ),
           FaIcon(
             FontAwesomeIcons.download,
-            color: AppColors.studio,
+            color: AppColors.paleSlate,
             size: 20,
           ),
         ],

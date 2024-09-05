@@ -4,6 +4,7 @@ import 'package:my_portfolio/constants/styles.dart';
 import 'package:my_portfolio/screens/widgets/count_container_widget.dart';
 import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
 import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
+import 'package:my_portfolio/screens/widgets/myservices_widget.dart';
 import 'package:my_portfolio/screens/widgets/rotaiting_image_widget.dart';
 import 'package:my_portfolio/screens/widgets/social_widget.dart';
 
@@ -116,6 +117,12 @@ class _TabletLayoutState extends State<TabletLayout> {
                         text3: "Expirience"),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: size.height * 0.05,
+              ),
+              MyservicesWidget(
+                size: size,
               ),
             ],
           ),

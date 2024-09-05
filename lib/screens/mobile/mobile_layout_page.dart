@@ -4,6 +4,7 @@ import 'package:my_portfolio/constants/styles.dart';
 import 'package:my_portfolio/screens/tablet/tablet_layout_page.dart';
 import 'package:my_portfolio/screens/widgets/count_container_widget.dart';
 import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
+import 'package:my_portfolio/screens/widgets/myservices_widget.dart';
 import 'package:my_portfolio/screens/widgets/rotaiting_image_widget.dart';
 
 class MobileLayout extends StatefulWidget {
@@ -60,7 +61,7 @@ class _MobileLayoutState extends State<MobileLayout> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                  const SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     CountContainerWidget(
@@ -72,7 +73,7 @@ class _MobileLayoutState extends State<MobileLayout> {
                     const SizedBox(
                       height: 20,
                     ),
-                     Divider(
+                    Divider(
                       color: AppColors.paleSlate,
                       indent: size.width * 0.05,
                       endIndent: size.width * 0.05,
@@ -88,7 +89,7 @@ class _MobileLayoutState extends State<MobileLayout> {
                     const SizedBox(
                       height: 20,
                     ),
-                     Divider(
+                    Divider(
                       color: AppColors.paleSlate,
                       indent: size.width * 0.05,
                       endIndent: size.width * 0.05,
@@ -104,7 +105,7 @@ class _MobileLayoutState extends State<MobileLayout> {
                     const SizedBox(
                       height: 20,
                     ),
-                       Divider(
+                    Divider(
                       color: AppColors.paleSlate,
                       indent: size.width * 0.05,
                       endIndent: size.width * 0.05,
@@ -119,6 +120,12 @@ class _MobileLayoutState extends State<MobileLayout> {
                         text3: "Expirience"),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: size.height * 0.05,
+              ),
+              MyservicesWidget(
+                size: size,
               ),
             ],
           ),
