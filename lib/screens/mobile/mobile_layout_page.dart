@@ -3,7 +3,9 @@ import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/styles.dart';
 import 'package:my_portfolio/screens/tablet/tablet_layout_page.dart';
 import 'package:my_portfolio/screens/widgets/count_container_widget.dart';
+import 'package:my_portfolio/screens/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
+import 'package:my_portfolio/screens/widgets/mobile_nav.dart';
 import 'package:my_portfolio/screens/widgets/myservices_widget.dart';
 import 'package:my_portfolio/screens/widgets/rotaiting_image_widget.dart';
 
@@ -15,10 +17,13 @@ class MobileLayout extends StatefulWidget {
 }
 
 class _MobileLayoutState extends State<MobileLayout> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      key: scaffoldKey,
+      endDrawer: const DrawerMobile(),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -28,6 +33,11 @@ class _MobileLayoutState extends State<MobileLayout> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              MobileNav(
+                ontap: () {
+                  scaffoldKey.currentState?.openEndDrawer();
+                },
+              ),
               const RotaitingImageContainer(),
               const SizedBox(
                 height: 20,
@@ -47,11 +57,6 @@ class _MobileLayoutState extends State<MobileLayout> {
                       ],
                     ),
                   ),
-
-                  // const Expanded(
-                  //   flex: 2,
-                  //   child: RotaitingImageContainer(),
-                  // )
                 ],
               ),
               Container(

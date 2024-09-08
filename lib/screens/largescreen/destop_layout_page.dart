@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/styles.dart';
 import 'package:my_portfolio/screens/widgets/count_container_widget.dart';
+import 'package:my_portfolio/screens/widgets/custom_tabbar.dart';
+import 'package:my_portfolio/screens/widgets/destop_nav.dart';
 import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
 import 'package:my_portfolio/screens/widgets/myservices_widget.dart';
 import 'package:my_portfolio/screens/widgets/rotaiting_image_widget.dart';
+import 'package:my_portfolio/screens/widgets/skills_desktop.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class DesktopLayout extends StatefulWidget {
@@ -14,7 +17,21 @@ class DesktopLayout extends StatefulWidget {
   State<DesktopLayout> createState() => _DesktopLayoutState();
 }
 
-class _DesktopLayoutState extends State<DesktopLayout> {
+class _DesktopLayoutState extends State<DesktopLayout>
+    with SingleTickerProviderStateMixin {
+  late TabController tabController;
+  @override
+  void initState() {
+    tabController = TabController(length: 4, vsync: this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -26,6 +43,7 @@ class _DesktopLayoutState extends State<DesktopLayout> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              const DestopNav(),
               Container(
                 margin: EdgeInsets.symmetric(vertical: size.height * 0.18),
                 child: Row(
@@ -56,25 +74,25 @@ class _DesktopLayoutState extends State<DesktopLayout> {
                   children: [
                     CountContainerWidget(
                       size: size,
-                      text1: "14",
-                      text2: "years",
-                      text3: "Expirience",
+                      text1: "01",
+                      text2: "Expirienced",
+                      text3: "Developer",
                     ),
                     CountContainerWidget(
                         size: size,
-                        text1: "14",
-                        text2: "years",
-                        text3: "Expirience"),
+                        text1: "02",
+                        text2: "Major",
+                        text3: "Projects"),
                     CountContainerWidget(
                         size: size,
-                        text1: "14",
-                        text2: "years",
-                        text3: "Expirience"),
+                        text1: "08",
+                        text2: "Mini",
+                        text3: "Projects"),
                     CountContainerWidget(
                         size: size,
-                        text1: "14",
-                        text2: "years",
-                        text3: "Expirience"),
+                        text1: "04",
+                        text2: "UIUX",
+                        text3: "Project"),
                   ],
                 ),
               ),
@@ -114,6 +132,49 @@ class _DesktopLayoutState extends State<DesktopLayout> {
                     MyservicesWidget(
                       size: size,
                     ),
+                  ],
+                ),
+              ),
+              Container(
+                width: size.width,
+                padding: EdgeInsets.symmetric(vertical: size.height * 0.05),
+                child: Column(
+                  children: [
+                    GradientTextWidget(
+                      fsize: 28,
+                      size: size,
+                      text1: "My Resent Works",
+                    ),
+                    CustomTabbar(
+                      tabController: tabController,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: size.height,
+                child: CustomTabbarView(tabController: tabController),
+              ),
+              Container(
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                width: size.width,
+                color: AppColors.ebony,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Text(
+                      "what i can do",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      height: size.height * 0.05,
+                    ),
+                    const SkillsDesktop(),
+
                   ],
                 ),
               )

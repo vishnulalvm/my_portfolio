@@ -22,7 +22,7 @@ class HeaderTextWidget extends StatelessWidget {
           SizedBox(
               child: TextWidget(
             sSize: size,
-            text: "I am Jobin",
+            text: "I'm Vishnulal V M",
             color: Colors.white,
             size: 26,
             fw: FontWeight.bold,
@@ -31,8 +31,8 @@ class HeaderTextWidget extends StatelessWidget {
           GradientTextWidget(
             size: size,
             alignment: TextAlign.center,
-            text1: "Flutter Developer",
-            text2: "UX Designer",
+            text1: "Flutter Developer |",
+            text2: "UI UX Designer",
           ),
           SizedBox(
             width: size.width * 0.5,
@@ -40,7 +40,7 @@ class HeaderTextWidget extends StatelessWidget {
                 sSize: size,
                 alignment: TextAlign.center,
                 text:
-                    "I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people",
+                    "Proficient Flutter developer with one year of experience, skilled in self-directed learning, UI/UX design, and cross-platform development. Strong focus on responsive, user-centric solutions with excellent team collaboration and adaptability.",
                 size: 16,
                 color: Colors.white,
                 fw: FontWeight.normal),
@@ -77,15 +77,15 @@ class GradientTextWidget extends StatelessWidget {
     return GradientText(
       textAlign: size.width < 600 && alignment != null ? alignment : null,
       "$text1\n${text2 ?? ""}",
-      colors: [
+      colors: const [
         AppColors.studio,
         AppColors.paleSlate,
       ],
       style: TextStyle(
-          fontSize: size.width * 0.040,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.bold,
-          ),
+        fontSize: size.width * 0.040,
+        fontFamily: 'Poppins',
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }
